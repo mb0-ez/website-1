@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #84218d;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            radial-gradient: (to right, #84218d, #f0f0f0);
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: rgba(0, 0, 0, 0.854);
+        }
+        .language-switcher {
+            text-align: center;
+            margin: 1em 0;
+        }
+        .language-switcher button {
+            background-color: #84218d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .language-switcher button:hover {
+            background-color: #45a049;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body>
+    <!-- Header section with the main title -->
+    <header>
+        <h1 id="title">MB0'S Website</h1>
+    </header>
+    
+    <!-- Navigation menu with links to different sections -->
+    <nav>
+        <a href="#home" id="nav-home">Home</a>
+        <a href="#about" id="nav-about">About</a>
+        <a href="#contact" id="nav-contact">Contact</a>
+    </nav>
+    
+    <!-- Language switcher buttons -->
+    <div class="language-switcher">
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('it')">Italian</button>
+    </div>
+    
+    <!-- Main content area with different sections -->
+    <main>
+        <section id="home">
+            <h2 id="home-title">Home</h2>
+            <p id="home-content"></p>
+        </section>
+        <section id="about">
+            <h2 id="about-title">About</h2>
+            <p id="about-content">Hey, I’m MB0, a 16-year-old reseller with a passion for flipping sneakers, streetwear, and exclusive drops. I started reselling as a side hustle, but it quickly became more than just making extra cash—it’s a lifestyle.
+
+                I stay ahead of trends, source the best deals, and make sure my customers get top-tier products at great prices. Whether it’s limited-edition kicks, hyped clothing, or tech gadgets, I’m always on the lookout for the next big thing.
+            </p>   
+
+        </section>
+        <section id="contact">
+            <h2 id="contact-title">Contact</h2>
+            <p id="contact-content">This is the contact section.</p>
+        </section>
+    </main>
+    
+    <!-- Footer section -->
+    <footer>
+        <p id="footer">&copy; 2023 My Website</p>
+    </footer>
+    
+    <!-- JavaScript for language switching functionality -->
+    <script>
+        // Translations for English and Spanish
+        const translations = {
+            en: {
+                title: "MB0's Website",
+                navHome: "Home",
+                navAbout: "About Me",
+                navContact: "Contact",
+                homeTitle: "Home",
+                homeContent: "IDk what to put here i made it but dk what to put.", 
+                aboutTitle: "About Me",
+                aboutContent: "Hey, I’m MB0, a 16-year-old reseller with a passion for flipping sneakers, streetwear, and exclusive drops. I started reselling as a side hustle, but it quickly became more than just making extra cash—it’s a lifestyle.I stay ahead of trends, source the best deals, and make sure my customers get top-tier products at great prices. Whether it’s limited-edition kicks, hyped clothing, or tech gadgets, I’m always on the lookout for the next big thing.",
+                contactTitle: "Contact:",
+                contactContent: "Email: adamdiscord262@gmail.com , Instagram: adam_mb0 , Discord: _mb0.",
+                footer: "&copy; 2025 MB0 All Rights Reserved"
+            },
+            it: {
+                title: "SITO WEB DI MB0",
+                navHome: "CASA",
+                navAbout: "DI",
+                navContact: "Contatto",
+                homeTitle: "Casa",
+                homeContent: "Non so cosa mettere qui l'ho fatto ma non so cosa mettere.",
+                aboutTitle: "Di",
+                aboutContent: "Ciao, sono MB0, un rivenditore di 16 anni con la passione per le sneaker, lo streetwear e le esclusive uscite. Ho iniziato a rivendere come un'attività secondaria, ma è presto diventato più di un semplice guadagno extra: è uno stile di vita. Sono al passo con le tendenze, cerco le migliori offerte e mi assicuro che i miei clienti ricevano prodotti di prima qualità a prezzi vantaggiosi. Che si tratti di scarpe in edizione limitata, abbigliamento alla moda o gadget tecnologici, sono sempre alla ricerca della prossima grande novità.",
+                contactTitle: "Contatto",
+                contactContent: "Email: adamdiscord262@gmail.com , Instagram: adam_mb0 , Discord: _mb0.",
+                footer: "&copy; 2025 MB0 Tutti i diritti riservati"
+            }
+        };
+
+        // Function to set the language based on user selection
+        function setLanguage(language) {
+            document.getElementById('title').innerHTML = translations[language].title;
+            document.getElementById('nav-home').innerHTML = translations[language].navHome;
+            document.getElementById('nav-about').innerHTML = translations[language].navAbout;
+            document.getElementById('nav-contact').innerHTML = translations[language].navContact;
+            document.getElementById('home-title').innerHTML = translations[language].homeTitle;
+            document.getElementById('home-content').innerHTML = translations[language].homeContent;
+            document.getElementById('about-title').innerHTML = translations[language].aboutTitle;
+            document.getElementById('about-content').innerHTML = translations[language].aboutContent;
+            document.getElementById('contact-title').innerHTML = translations[language].contactTitle;
+            document.getElementById('contact-content').innerHTML = translations[language].contactContent;
+            document.getElementById('footer').innerHTML = translations[language].footer;
+        }
+
+        // Set default language to English
+        setLanguage('en');
+    </script>
+</body>
+</html>
+
